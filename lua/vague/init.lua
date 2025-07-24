@@ -1,9 +1,9 @@
 local internal_conf = require("vague.config.internal")
 local M = {}
 
----@param user_opts? VagueColorscheme.Config
-M.setup = function(user_opts)
-  if user_opts then internal_conf.set(user_opts) end
+---@param opts? VagueColorscheme.Config
+M.setup = function(opts)
+  if opts then internal_conf.set(opts) end
 end
 
 -- SHOULD BE CALLED AFTER SETUP (unless using default colors)

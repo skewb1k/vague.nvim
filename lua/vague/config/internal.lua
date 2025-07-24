@@ -147,12 +147,9 @@ local DEFAULT_SETTINGS = {
   },
 }
 
-M._DEFAULT_SETTINGS = DEFAULT_SETTINGS
-M.current = M._DEFAULT_SETTINGS
+M.current = DEFAULT_SETTINGS
 
-local opts = type(vim.g.vague_colorscheme) == "function" and vim.g.vague_colorscheme() or vim.g.vague_colorscheme or {}
-
----@param user_opts VagueColorscheme.Config
-M.set = function(user_opts) M.current = vim.tbl_deep_extend("force", vim.deepcopy(M.current), user_opts or opts) end
+---@param opts VagueColorscheme.Config
+M.set = function(opts) M.current = vim.tbl_deep_extend("force", vim.deepcopy(M.current), opts) end
 
 return M
