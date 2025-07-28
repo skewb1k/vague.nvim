@@ -1,20 +1,20 @@
 local M = {}
 
 ---@param conf VagueColorscheme.InternalConfig
----@return table
 M.get_colors = function(conf)
   local c = conf.colors
 
   -- stylua: ignore
+  ---@type table<string, vim.api.keyset.highlight>
   local hl = {
     ColorColumn      = { bg = c.line },
     Conceal          = { fg = c.func, bg = c.bg },
     CurSearch        = { fg = c.fg, bg = c.search or c.visual },
-    Cursor           = { gui = "reverse" },
-    vCursor          = { gui = "reverse" },
-    iCursor          = { gui = "reverse" },
-    lCursor          = { gui = "reverse" },
-    CursorIM         = { gui = "reverse" },
+    Cursor           = { reverse = true },
+    vCursor          = { reverse = true },
+    iCursor          = { reverse = true },
+    lCursor          = { reverse = true },
+    CursorIM         = { reverse = true },
     CursorColumn     = { bg = c.line },
     CursorLine       = { bg = c.line },
     CursorLineNr     = { fg = c.fg },
@@ -22,7 +22,7 @@ M.get_colors = function(conf)
     debugPC          = { fg = c.bg, bg = c.fg },
     debugBreakpoint  = { fg = c.bg, bg = c.operator },
     Directory        = { fg = c.hint },
-    ErrorMsg         = { fg = c.error, gui = "bold" },
+    ErrorMsg         = { fg = c.error, bold = true },
     EndOfBuffer      = { fg = c.comment or c.bg },
     FloatBorder      = { fg = c.floatBorder, bg = conf.transparent and "none" or c.bg },
     FloatTitle       = { fg = c.floatBorder, bg = conf.transparent and "none" or c.bg },
@@ -32,8 +32,8 @@ M.get_colors = function(conf)
     IncSearch        = { fg = c.bg, bg = c.search or c.visual },
     LineNr           = { fg = c.comment },
     MatchParen       = { fg = c.fg, bg = c.visual },
-    MoreMsg          = { fg = c.func, gui = "bold" },
-    MsgSeparator     = { fg = c.string, bg = c.line, gui = "bold" },
+    MoreMsg          = { fg = c.func, bold = true },
+    MsgSeparator     = { fg = c.string, bg = c.line, bold = true },
     NonText          = { fg = c.comment },
     Normal           = { fg = c.fg, bg = conf.transparent and "none" or c.bg },
     NormalFloat      = { fg = c.fg, bg = conf.transparent and "none" or c.bg },
@@ -43,14 +43,14 @@ M.get_colors = function(conf)
     PmenuSbar        = { fg = c.visual, bg = c.comment },
     PmenuThumb       = { fg = c.comment, bg = c.visual },
     Question         = { fg = c.constant },
-    QuickFixLine     = { fg = c.func, gui = "underline" },
+    QuickFixLine     = { fg = c.func, underline = true },
     Search           = { fg = c.fg, bg = c.search or c.visual },
     SignColumn       = { fg = c.fg, bg = conf.transparent and "none" or c.bg },
     SpecialKey       = { fg = c.comment },
-    SpellBad         = { fg = "none", gui = "undercurl" },
-    SpellCap         = { fg = "none", gui = "undercurl" },
-    SpellLocal       = { fg = "none", gui = "undercurl" },
-    SpellRare        = { fg = "none", gui = "undercurl" },
+    SpellBad         = { fg = "none", undercurl = true },
+    SpellCap         = { fg = "none", undercurl = true },
+    SpellLocal       = { fg = "none", undercurl = true },
+    SpellRare        = { fg = "none", undercurl = true },
     StatusLine       = { fg = c.fg, bg = c.comment },
     StatusLineTerm   = { fg = c.fg, bg = c.line },
     StatusLineNC     = { fg = c.comment, bg = c.bg },
@@ -63,8 +63,8 @@ M.get_colors = function(conf)
     ToolbarButton    = { fg = c.bg, bg = c.visual },
     ToolbarLine      = { fg = c.fg },
     Visual           = { fg = c.fg, bg = c.visual },
-    VisualNOS        = { fg = "none", bg = c.comment, gui = "underline" },
-    WarningMsg       = { fg = c.warning, gui = "bold" },
+    VisualNOS        = { fg = "none", bg = c.comment, underline = true },
+    WarningMsg       = { fg = c.warning, bold = true },
     Whitespace       = { fg = c.comment },
     WildMenu         = { fg = c.bg, bg = c.func },
     WinSeparator     = { fg = c.floatBorder },

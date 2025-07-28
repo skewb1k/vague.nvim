@@ -1,5 +1,11 @@
 local utilities = {}
 
+function utilities.configure_fg(hl, a)
+	hl.bold = a == "bold"
+	hl.italic = a == "italic"
+	return hl
+end
+
 ---@param color string
 local function color_to_rgb(color)
   local function byte(value, offset) return bit.band(bit.rshift(value, offset), 0xFF) end

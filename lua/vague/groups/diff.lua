@@ -2,11 +2,11 @@ local utilities = require("vague.utilities")
 local M = {}
 
 ---@param conf VagueColorscheme.InternalConfig
----@return table
 M.get_colors = function(conf)
   local c = conf.colors
 
   -- stylua: ignore
+  ---@type table<string, vim.api.keyset.highlight>
   local hl = {
     DiffAdd          = { fg = c.plus, bg = utilities.blend(c.plus, c.bg, 0.2) },
     DiffChange       = { fg = c.delta, bg = utilities.blend(c.delta, c.bg, 0.2) },
