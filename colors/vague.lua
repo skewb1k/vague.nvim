@@ -21,11 +21,11 @@ local c = {
   type = "#9bb4bc",
   search = "#405065",
   plus = "#7fa563",
-}
 
-local diffAdd = "#293125"
-local diffChange = "#41362a"
-local diffDelete = "#3b242a"
+  diffAdd = "#293125",
+  diffChange = "#41362a",
+  diffDelete = "#3b242a",
+}
 
 ---@type table<string,vim.api.keyset.highlight>
 local highlights = {
@@ -89,9 +89,9 @@ local highlights = {
   Added = { fg = c.plus },
   Changed = { fg = c.warning },
   Removed = { fg = c.error },
-  DiffAdd = { bg = diffDelete },
-  DiffChange = { bg = diffChange },
-  DiffDelete = { bg = diffDelete },
+  DiffAdd = { bg = c.diffDelete },
+  DiffChange = { bg = c.diffChange },
+  DiffDelete = { bg = c.diffDelete },
   DiffText = { fg = c.fg },
   DiffFile = { fg = c.keyword },
   DiffIndexLine = { fg = c.comment },
@@ -138,11 +138,11 @@ local highlights = {
   ["@constant.builtin"] = { fg = c.number, bold = true },
   ["@constructor"] = { fg = c.constant },
   ["@constructor.lua"] = { fg = c.type },
-  ["@text.diff.add"] = { bg = diffAdd },
-  ["@text.diff.delete"] = { bg = diffDelete },
-  ["@diff.plus"] = { bg = diffAdd },
-  ["@diff.delta"] = { bg = diffChange },
-  ["@diff.minus"] = { bg = diffDelete },
+  ["@text.diff.add"] = { bg = c.diffAdd },
+  ["@text.diff.delete"] = { bg = c.diffDelete },
+  ["@diff.plus"] = { bg = c.diffAdd },
+  ["@diff.delta"] = { bg = c.diffChange },
+  ["@diff.minus"] = { bg = c.diffDelete },
   ["@function"] = { fg = c.func },
   ["@function.builtin"] = { fg = c.func },
   ["@function.call"] = { fg = c.parameter },
