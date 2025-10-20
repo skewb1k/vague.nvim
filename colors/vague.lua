@@ -21,7 +21,6 @@ local c = {
   type = "#9bb4bc",
   search = "#405065",
   plus = "#7fa563",
-  delta = "#f3be7c",
 }
 
 local diffAdd = "#293125"
@@ -88,7 +87,7 @@ local highlights = {
   WildMenu = { fg = c.bg, bg = c.func },
   WinSeparator = { fg = c.floatBorder },
   Added = { fg = c.plus },
-  Changed = { fg = c.delta },
+  Changed = { fg = c.warning },
   Removed = { fg = c.error },
   DiffAdd = { bg = diffDelete },
   DiffChange = { bg = diffChange },
@@ -195,7 +194,7 @@ local highlights = {
   DiagnosticUnderlineHint = { undercurl = true, sp = c.hint },
   DiagnosticUnderlineInfo = { undercurl = true, sp = c.constant },
   DiagnosticUnderlineOk = { undercurl = true, sp = c.plus },
-  DiagnosticUnderlineWarn = { undercurl = true, sp = c.delta },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning },
   DiagnosticVirtualTextError = { fg = c.error, bold = true },
   DiagnosticVirtualTextHint = { fg = c.hint },
   DiagnosticVirtualTextInfo = { fg = c.constant },
