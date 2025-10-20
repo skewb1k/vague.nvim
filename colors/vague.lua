@@ -183,9 +183,6 @@ local highlights = {
   ["@variable.member"] = { fg = c.builtin },
   ["@variable.parameter"] = { fg = c.parameter },
 
-  TreesitterContext = { bg = c.line },
-  TreesitterContextLineNumber = { fg = c.comment, bg = c.line },
-
   DiagnosticError = { fg = c.error, bold = true },
   DiagnosticHint = { fg = c.hint },
   DiagnosticInfo = { fg = c.constant },
@@ -234,8 +231,6 @@ local highlights = {
   ["@lsp.typemod.function.definition"] = { fg = c.func },
   ["@lsp.typemod.variable.defaultLibrary"] = { fg = c.number, bold = true },
   ["@lsp.typemod.variable.definition"] = { fg = c.property },
-
-  MiniTrailspace = { bg = c.error },
 }
 
 vim.g.terminal_color_0 = c.line
