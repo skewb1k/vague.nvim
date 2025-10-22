@@ -86,6 +86,8 @@ local highlights = {
 	Whitespace = { fg = c.comment },
 	WildMenu = { fg = c.bg, bg = c.func },
 	WinSeparator = { fg = c.floatBorder },
+	WinBar = { fg = c.fg, bg = c.inactiveBg },
+	WinBarNC = { fg = c.comment },
 	Added = { fg = c.plus },
 	Changed = { fg = c.warning },
 	Removed = { fg = c.error },
