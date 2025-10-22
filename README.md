@@ -4,9 +4,10 @@
 </div>
 
 An opinionated fork of https://github.com/vague-theme/vague.nvim.
+
 Designed for my personal use - but you can use it too, if you're cool enough.
 
-Key differences:
+Differences:
 
 - No configuration
 - Single-file structure
@@ -17,7 +18,7 @@ Key differences:
 
 ```lua
 vim.pack.add({ "https://github.com/skewb1k/vague.nvim" })
-vim.cmd("colorscheme vague")
+vim.cmd.colorscheme("vague")
 ```
 
 ## Extras
