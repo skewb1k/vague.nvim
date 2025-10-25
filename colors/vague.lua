@@ -1,3 +1,9 @@
+vim.g.colors_name = "vague"
+vim.cmd.highlight("clear")
+if vim.fn.has("syntax_on") then
+	vim.cmd.syntax("reset")
+end
+
 local c = {
 	bg = "#141415",
 	inactiveBg = "#1c1c24",
@@ -27,185 +33,186 @@ local c = {
 	diffDelete = "#3b242a",
 }
 
----@type table<string,vim.api.keyset.highlight>
-local highlights = {
-	ColorColumn = { bg = c.line },
-	Conceal = { fg = c.func },
-	CurSearch = { fg = c.fg, bg = c.search },
-	CursorColumn = { bg = c.line },
-	CursorLine = { bg = c.line },
-	CursorLineNr = { fg = c.fg },
-	Debug = { fg = c.constant },
-	debugPC = { fg = c.bg, bg = c.fg },
-	debugBreakpoint = { fg = c.bg, bg = c.operator },
-	Directory = { fg = c.hint },
-	OkMsg = { fg = c.plus },
-	ErrorMsg = { fg = c.error, bold = true },
-	EndOfBuffer = { fg = c.comment },
-	FloatBorder = { fg = c.floatBorder, bg = c.bg },
-	FloatTitle = { fg = c.floatBorder, bg = c.bg },
-	FloatFooter = { fg = c.floatBorder, bg = c.bg },
-	Folded = { fg = c.comment, bg = c.line },
-	FoldColumn = { fg = c.comment, bg = c.bg },
-	IncSearch = { fg = c.bg, bg = c.search },
-	LineNr = { fg = c.comment },
-	MatchParen = { fg = c.fg, bg = c.visual },
-	MoreMsg = { fg = c.func, bold = true },
-	MsgSeparator = { fg = c.string, bg = c.line, bold = true },
-	NonText = { fg = c.comment },
-	Normal = { fg = c.fg, bg = c.bg },
-	NormalFloat = { fg = c.fg, bg = c.bg },
-	ModeMsg = { fg = c.string },
-	Pmenu = { fg = c.fg },
-	PmenuSel = { fg = c.constant, bg = c.line },
-	PmenuThumb = { bg = c.comment },
-	PmenuBorder = { fg = c.floatBorder },
-	Question = { fg = c.constant },
-	QuickFixLine = { fg = c.func, underline = true },
-	Search = { fg = c.fg, bg = c.search },
-	SignColumn = { fg = c.fg, bg = c.bg },
-	SpecialKey = { fg = c.comment },
-	SpellBad = { undercurl = true },
-	SpellCap = { undercurl = true },
-	SpellLocal = { undercurl = true },
-	SpellRare = { undercurl = true },
-	StatusLine = { fg = c.fg, bg = c.inactiveBg },
-	StatusLineTerm = { fg = c.fg, bg = c.inactiveBg },
-	StatusLineNC = { fg = c.comment },
-	StatusLineTermNC = { fg = c.comment },
-	Substitute = { fg = c.type, bg = c.visual },
-	TabLine = { fg = c.fg, bg = c.line },
-	TabLineFill = { fg = c.comment, bg = c.line },
-	TabLineSel = { fg = c.bg, bg = c.fg },
-	Terminal = { fg = c.fg, bg = c.bg },
-	ToolbarButton = { fg = c.bg, bg = c.visual },
-	ToolbarLine = { fg = c.fg },
-	Visual = { bg = c.visual },
-	VisualNOS = { bg = c.comment, undercurl = true },
-	WarningMsg = { fg = c.warning, bold = true },
-	Whitespace = { fg = c.line },
-	WildMenu = { fg = c.bg, bg = c.func },
-	WinSeparator = { fg = c.floatBorder },
-	WinBar = { fg = c.fg, bg = c.inactiveBg },
-	WinBarNC = { fg = c.comment },
-	Added = { fg = c.plus },
-	Changed = { fg = c.warning },
-	Removed = { fg = c.error },
-	DiffAdd = { bg = c.diffDelete },
-	DiffChange = { bg = c.diffChange },
-	DiffDelete = { bg = c.diffDelete },
-	DiffText = { fg = c.fg },
-	DiffFile = { fg = c.keyword },
-	DiffIndexLine = { fg = c.comment },
+local function hl(group, opts)
+	vim.api.nvim_set_hl(0, group, opts)
+end
 
-	Boolean = { fg = c.number, bold = true },
-	Character = { fg = c.string },
-	Comment = { fg = c.comment },
-	Conditional = { fg = c.keyword },
-	Constant = { fg = c.constant },
-	Define = { fg = c.comment },
-	Delimiter = { fg = c.fg },
-	Error = { fg = c.error, bold = true },
-	Exception = { fg = c.keyword },
-	Float = { fg = c.number },
-	Function = { fg = c.func },
-	Identifier = { fg = c.constant },
-	Include = { fg = c.keyword },
-	Keyword = { fg = c.keyword },
-	Label = { fg = c.keyword },
-	Macro = { fg = c.constant },
-	Number = { fg = c.number },
-	Operator = { fg = c.operator },
-	PreCondit = { fg = c.comment },
-	PreProc = { fg = c.constant },
-	Repeat = { fg = c.keyword },
-	Special = { fg = c.builtin },
-	SpecialChar = { fg = c.keyword },
-	SpecialComment = { fg = c.keyword },
-	Statement = { fg = c.keyword },
-	StorageClass = { fg = c.constant },
-	String = { fg = c.string },
-	Structure = { fg = c.constant },
-	Tag = { fg = c.builtin },
-	Title = { fg = c.property },
-	Todo = { fg = c.func },
-	Type = { fg = c.type },
-	Typedef = { fg = c.constant },
+hl("ColorColumn", { bg = c.line })
+hl("Conceal", { fg = c.func })
+hl("CurSearch", { fg = c.fg, bg = c.search })
+hl("CursorColumn", { bg = c.line })
+hl("CursorLine", { bg = c.line })
+hl("CursorLineNr", { fg = c.fg })
+hl("Debug", { fg = c.constant })
+hl("debugPC", { fg = c.bg, bg = c.fg })
+hl("debugBreakpoint", { fg = c.bg, bg = c.operator })
+hl("Directory", { fg = c.hint })
+hl("OkMsg", { fg = c.plus })
+hl("ErrorMsg", { fg = c.error, bold = true })
+hl("EndOfBuffer", { fg = c.comment })
+hl("FloatBorder", { fg = c.floatBorder, bg = c.bg })
+hl("FloatTitle", { fg = c.floatBorder, bg = c.bg })
+hl("FloatFooter", { fg = c.floatBorder, bg = c.bg })
+hl("Folded", { fg = c.comment, bg = c.line })
+hl("FoldColumn", { fg = c.comment, bg = c.bg })
+hl("IncSearch", { fg = c.bg, bg = c.search })
+hl("LineNr", { fg = c.comment })
+hl("MatchParen", { fg = c.fg, bg = c.visual })
+hl("MoreMsg", { fg = c.func, bold = true })
+hl("MsgSeparator", { fg = c.string, bg = c.line, bold = true })
+hl("NonText", { fg = c.comment })
+hl("Normal", { fg = c.fg, bg = c.bg })
+hl("NormalFloat", { fg = c.fg, bg = c.bg })
+hl("ModeMsg", { fg = c.string })
+hl("Pmenu", { fg = c.fg })
+hl("PmenuSel", { fg = c.constant, bg = c.line })
+hl("PmenuThumb", { bg = c.comment })
+hl("PmenuBorder", { fg = c.floatBorder })
+hl("Question", { fg = c.constant })
+hl("QuickFixLine", { fg = c.func, underline = true })
+hl("Search", { fg = c.fg, bg = c.search })
+hl("SignColumn", { fg = c.fg, bg = c.bg })
+hl("SpecialKey", { fg = c.comment })
+hl("SpellBad", { undercurl = true })
+hl("SpellCap", { undercurl = true })
+hl("SpellLocal", { undercurl = true })
+hl("SpellRare", { undercurl = true })
+hl("StatusLine", { fg = c.fg, bg = c.inactiveBg })
+hl("StatusLineTerm", { fg = c.fg, bg = c.inactiveBg })
+hl("StatusLineNC", { fg = c.comment })
+hl("StatusLineTermNC", { fg = c.comment })
+hl("Substitute", { fg = c.type, bg = c.visual })
+hl("TabLine", { fg = c.fg, bg = c.line })
+hl("TabLineFill", { fg = c.comment, bg = c.line })
+hl("TabLineSel", { fg = c.bg, bg = c.fg })
+hl("Terminal", { fg = c.fg, bg = c.bg })
+hl("ToolbarButton", { fg = c.bg, bg = c.visual })
+hl("ToolbarLine", { fg = c.fg })
+hl("Visual", { bg = c.visual })
+hl("VisualNOS", { bg = c.comment, undercurl = true })
+hl("WarningMsg", { fg = c.warning, bold = true })
+hl("Whitespace", { fg = c.line })
+hl("WildMenu", { fg = c.bg, bg = c.func })
+hl("WinSeparator", { fg = c.floatBorder })
+hl("WinBar", { fg = c.fg, bg = c.inactiveBg })
+hl("WinBarNC", { fg = c.comment })
+hl("Added", { fg = c.plus })
+hl("Changed", { fg = c.warning })
+hl("Removed", { fg = c.error })
+hl("DiffAdd", { bg = c.diffDelete })
+hl("DiffChange", { bg = c.diffChange })
+hl("DiffDelete", { bg = c.diffDelete })
+hl("DiffText", { fg = c.fg })
+hl("DiffFile", { fg = c.keyword })
+hl("DiffIndexLine", { fg = c.comment })
 
-	["@attribute"] = { fg = c.constant },
-	["@boolean"] = { fg = c.number, bold = true },
-	["@character"] = { fg = c.string },
-	["@character.special"] = { fg = c.keyword },
-	["@constant"] = { fg = c.constant },
-	["@constant.builtin"] = { fg = c.number, bold = true },
-	["@constructor"] = { fg = c.constant },
-	["@constructor.lua"] = { fg = c.type },
-	["@text.diff.add"] = { bg = c.diffAdd },
-	["@text.diff.delete"] = { bg = c.diffDelete },
-	["@diff.plus"] = { bg = c.diffAdd },
-	["@diff.delta"] = { bg = c.diffChange },
-	["@diff.minus"] = { bg = c.diffDelete },
-	["@function"] = { fg = c.func },
-	["@function.builtin"] = { fg = c.func },
-	["@function.call"] = { fg = c.parameter },
-	["@function.macro"] = { fg = c.constant },
-	["@function.method.call"] = { fg = c.type },
-	["@keyword"] = { fg = c.keyword },
-	["@keyword.import"] = { fg = c.constant },
-	["@label"] = { fg = c.keyword },
-	["@markup"] = { fg = c.fg },
-	["@markup.heading"] = { fg = c.keyword, bold = true },
-	["@markup.italic"] = { fg = c.fg, italic = true },
-	["@markup.link"] = { fg = c.string },
-	["@markup.link.uri"] = { fg = c.string, underline = true },
-	["@markup.list"] = { fg = c.func },
-	["@markup.math"] = { fg = c.string },
-	["@markup.quote.markdown"] = { fg = c.comment },
-	["@markup.raw"] = { fg = c.constant },
-	["@markup.strikethrough"] = { fg = c.comment, strikethrough = true },
-	["@markup.strong"] = { fg = c.fg, bold = true },
-	["@markup.underline"] = { fg = c.fg, underline = true },
-	["@module"] = { fg = c.constant },
-	["@operator"] = { fg = c.operator },
-	["@property"] = { fg = c.property },
-	["@punctuation.special"] = { fg = c.keyword },
-	["@string"] = { fg = c.string },
-	["@string.escape"] = { fg = c.keyword },
-	["@string.regexp"] = { fg = c.keyword },
-	["@string.special.symbol"] = { fg = c.constant },
-	["@string.special.url"] = { fg = c.func },
-	["@tag.attribute"] = { fg = c.constant },
-	["@tag.delimiter"] = { fg = c.fg },
-	["@type"] = { fg = c.type },
-	["@type.builtin"] = { fg = c.builtin, bold = true },
-	["@type.declaration"] = { fg = c.constant },
-	["@type.definition"] = { fg = c.constant },
-	["@variable"] = { fg = c.fg },
-	["@variable.builtin"] = { fg = c.builtin },
-	["@variable.member"] = { fg = c.builtin },
-	["@variable.parameter"] = { fg = c.parameter },
+hl("Boolean", { fg = c.number, bold = true })
+hl("Character", { fg = c.string })
+hl("Comment", { fg = c.comment })
+hl("Conditional", { fg = c.keyword })
+hl("Constant", { fg = c.constant })
+hl("Define", { fg = c.comment })
+hl("Delimiter", { fg = c.fg })
+hl("Error", { fg = c.error, bold = true })
+hl("Exception", { fg = c.keyword })
+hl("Float", { fg = c.number })
+hl("Function", { fg = c.func })
+hl("Identifier", { fg = c.constant })
+hl("Include", { fg = c.keyword })
+hl("Keyword", { fg = c.keyword })
+hl("Label", { fg = c.keyword })
+hl("Macro", { fg = c.constant })
+hl("Number", { fg = c.number })
+hl("Operator", { fg = c.operator })
+hl("PreCondit", { fg = c.comment })
+hl("PreProc", { fg = c.constant })
+hl("Repeat", { fg = c.keyword })
+hl("Special", { fg = c.builtin })
+hl("SpecialChar", { fg = c.keyword })
+hl("SpecialComment", { fg = c.keyword })
+hl("Statement", { fg = c.keyword })
+hl("StorageClass", { fg = c.constant })
+hl("String", { fg = c.string })
+hl("Structure", { fg = c.constant })
+hl("Tag", { fg = c.builtin })
+hl("Title", { fg = c.property })
+hl("Todo", { fg = c.func })
+hl("Type", { fg = c.type })
+hl("Typedef", { fg = c.constant })
 
-	DiagnosticError = { fg = c.error, bold = true },
-	DiagnosticWarn = { fg = c.warning, bold = true },
-	DiagnosticHint = { fg = c.hint },
-	DiagnosticInfo = { fg = c.constant },
-	DiagnosticOk = { fg = c.plus },
-	DiagnosticUnderlineError = { undercurl = true, sp = c.error },
-	DiagnosticUnderlineHint = { undercurl = true, sp = c.hint },
-	DiagnosticUnderlineInfo = { undercurl = true, sp = c.constant },
-	DiagnosticUnderlineOk = { undercurl = true, sp = c.plus },
-	DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning },
-	LspCodeLens = { fg = c.comment },
-	LspCodeLensSeparator = { fg = c.comment },
-	LspCxxHlGroupEnumConstant = { fg = c.type },
-	LspCxxHlGroupMemberVariable = { fg = c.type },
-	LspCxxHlGroupNamespace = { fg = c.func },
-	LspCxxHlSkippedRegion = { fg = c.comment },
-	LspCxxHlSkippedRegionBeginEnd = { fg = c.operator },
-	LspReferenceRead = { bg = c.comment },
-	LspReferenceText = { bg = c.comment },
-	LspReferenceWrite = { bg = c.comment },
-}
+hl("@attribute", { fg = c.constant })
+hl("@boolean", { fg = c.number, bold = true })
+hl("@character", { fg = c.string })
+hl("@character.special", { fg = c.keyword })
+hl("@constant", { fg = c.constant })
+hl("@constant.builtin", { fg = c.number, bold = true })
+hl("@constructor", { fg = c.constant })
+hl("@constructor.lua", { fg = c.type })
+hl("@text.diff.add", { bg = c.diffAdd })
+hl("@text.diff.delete", { bg = c.diffDelete })
+hl("@diff.plus", { bg = c.diffAdd })
+hl("@diff.delta", { bg = c.diffChange })
+hl("@diff.minus", { bg = c.diffDelete })
+hl("@function", { fg = c.func })
+hl("@function.builtin", { fg = c.func })
+hl("@function.call", { fg = c.parameter })
+hl("@function.macro", { fg = c.constant })
+hl("@function.method.call", { fg = c.type })
+hl("@keyword", { fg = c.keyword })
+hl("@keyword.import", { fg = c.constant })
+hl("@label", { fg = c.keyword })
+hl("@markup", { fg = c.fg })
+hl("@markup.heading", { fg = c.keyword, bold = true })
+hl("@markup.italic", { fg = c.fg, italic = true })
+hl("@markup.link", { fg = c.string })
+hl("@markup.link.uri", { fg = c.string, underline = true })
+hl("@markup.list", { fg = c.func })
+hl("@markup.math", { fg = c.string })
+hl("@markup.quote.markdown", { fg = c.comment })
+hl("@markup.raw", { fg = c.constant })
+hl("@markup.strikethrough", { fg = c.comment, strikethrough = true })
+hl("@markup.strong", { fg = c.fg, bold = true })
+hl("@markup.underline", { fg = c.fg, underline = true })
+hl("@module", { fg = c.constant })
+hl("@operator", { fg = c.operator })
+hl("@property", { fg = c.property })
+hl("@punctuation.special", { fg = c.keyword })
+hl("@string", { fg = c.string })
+hl("@string.escape", { fg = c.keyword })
+hl("@string.regexp", { fg = c.keyword })
+hl("@string.special.symbol", { fg = c.constant })
+hl("@string.special.url", { fg = c.func })
+hl("@tag.attribute", { fg = c.constant })
+hl("@tag.delimiter", { fg = c.fg })
+hl("@type", { fg = c.type })
+hl("@type.builtin", { fg = c.builtin, bold = true })
+hl("@type.declaration", { fg = c.constant })
+hl("@type.definition", { fg = c.constant })
+hl("@variable", { fg = c.fg })
+hl("@variable.builtin", { fg = c.builtin })
+hl("@variable.member", { fg = c.builtin })
+hl("@variable.parameter", { fg = c.parameter })
+
+hl("DiagnosticError", { fg = c.error, bold = true })
+hl("DiagnosticWarn", { fg = c.warning, bold = true })
+hl("DiagnosticHint", { fg = c.hint })
+hl("DiagnosticInfo", { fg = c.constant })
+hl("DiagnosticOk", { fg = c.plus })
+hl("DiagnosticUnderlineError", { undercurl = true, sp = c.error })
+hl("DiagnosticUnderlineHint", { undercurl = true, sp = c.hint })
+hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.constant })
+hl("DiagnosticUnderlineOk", { undercurl = true, sp = c.plus })
+hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.warning })
+hl("LspCodeLens", { fg = c.comment })
+hl("LspCodeLensSeparator", { fg = c.comment })
+hl("LspCxxHlGroupEnumConstant", { fg = c.type })
+hl("LspCxxHlGroupMemberVariable", { fg = c.type })
+hl("LspCxxHlGroupNamespace", { fg = c.func })
+hl("LspCxxHlSkippedRegion", { fg = c.comment })
+hl("LspCxxHlSkippedRegionBeginEnd", { fg = c.operator })
+hl("LspReferenceRead", { bg = c.comment })
+hl("LspReferenceText", { bg = c.comment })
+hl("LspReferenceWrite", { bg = c.comment })
 
 vim.g.terminal_color_0 = c.line
 vim.g.terminal_color_1 = c.error
@@ -223,12 +230,3 @@ vim.g.terminal_color_12 = "#8ba9c1"
 vim.g.terminal_color_13 = "#c9b1ca"
 vim.g.terminal_color_14 = "#bebeda"
 vim.g.terminal_color_15 = "#d7d7d7"
-
-vim.g.colors_name = "vague"
-vim.cmd.highlight("clear")
-if vim.fn.has("syntax_on") then
-	vim.cmd.syntax("reset")
-end
-for group, opts in pairs(highlights) do
-	vim.api.nvim_set_hl(0, group, opts)
-end
