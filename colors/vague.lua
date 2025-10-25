@@ -83,7 +83,7 @@ local highlights = {
 	Visual = { bg = c.visual },
 	VisualNOS = { bg = c.comment, undercurl = true },
 	WarningMsg = { fg = c.warning, bold = true },
-	Whitespace = { fg = c.comment },
+	Whitespace = { fg = c.line },
 	WildMenu = { fg = c.bg, bg = c.func },
 	WinSeparator = { fg = c.floatBorder },
 	WinBar = { fg = c.fg, bg = c.inactiveBg },
