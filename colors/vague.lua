@@ -102,7 +102,7 @@ hl("Removed", { fg = c.error })
 hl("DiffAdd", { bg = c.diffAdd })
 hl("DiffChange", { bg = c.diffChange })
 hl("DiffDelete", { bg = c.diffDelete })
-hl("DiffText", { fg = c.fg })
+hl("DiffText", { fg = "#6D583E" })
 hl("DiffFile", { fg = c.keyword })
 hl("DiffIndexLine", { fg = c.comment })
 
