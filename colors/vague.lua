@@ -103,8 +103,6 @@ hl("DiffAdd", { bg = c.diffAdd })
 hl("DiffChange", { bg = c.diffChange })
 hl("DiffDelete", { bg = c.diffDelete })
 hl("DiffText", { fg = "#6D583E" })
-hl("DiffFile", { fg = c.keyword })
-hl("DiffIndexLine", { fg = c.comment })
 
 hl("Boolean", { fg = c.number, bold = true })
 hl("Character", { fg = c.string })
@@ -204,10 +202,7 @@ hl("DiagnosticUnderlineInfo", { undercurl = true, sp = c.constant })
 hl("DiagnosticUnderlineOk", { undercurl = true, sp = c.plus })
 hl("DiagnosticUnderlineWarn", { undercurl = true, sp = c.warning })
 hl("LspCodeLens", { fg = c.comment })
-hl("LspCodeLensSeparator", { fg = c.comment })
-hl("LspReferenceRead", { bg = c.comment })
 hl("LspReferenceText", { bg = c.comment })
-hl("LspReferenceWrite", { bg = c.comment })
 
 vim.g.terminal_color_0 = c.line
 vim.g.terminal_color_1 = c.error
