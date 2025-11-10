@@ -102,7 +102,7 @@ hl("Removed", { fg = c.error })
 hl("DiffAdd", { bg = c.diffAdd })
 hl("DiffChange", { bg = c.diffChange })
 hl("DiffDelete", { bg = c.diffDelete })
-hl("DiffText", { fg = "#6D583E" })
+hl("DiffText", { bg = "#6D583E" })
 
 hl("Boolean", { fg = c.number, bold = true })
 hl("Character", { fg = c.string })
