@@ -30,6 +30,7 @@ local c = {
 
 	diffAdd = "#293125",
 	diffChange = "#41362a",
+	diffText = "#6D583E",
 	diffDelete = "#3b242a",
 }
 
@@ -102,7 +103,7 @@ hl("Removed", { fg = c.error })
 hl("DiffAdd", { bg = c.diffAdd })
 hl("DiffChange", { bg = c.diffChange })
 hl("DiffDelete", { bg = c.diffDelete })
-hl("DiffText", { bg = "#6D583E" })
+hl("DiffText", { bg = c.diffText })
 
 hl("Boolean", { fg = c.number })
 hl("Character", { fg = c.string })
