@@ -6,7 +6,6 @@ end
 
 local c = {
 	bg = "#141415",
-	inactiveBg = "#1c1c24",
 	fg = "#cdcdcd",
 	floatBorder = "#878787",
 	line = "#252530",
@@ -27,7 +26,6 @@ local c = {
 	type = "#9bb4bc",
 	search = "#405065",
 	plus = "#7fa563",
-
 	diffAdd = "#293125",
 	diffChange = "#41362a",
 	diffText = "#6D583E",
@@ -70,7 +68,7 @@ hl("PmenuSel", { fg = c.constant, bg = c.line })
 hl("PmenuThumb", { bg = c.comment })
 hl("PmenuBorder", { fg = c.floatBorder })
 hl("Question", { fg = c.constant })
-hl("QuickFixLine", { bg = c.inactiveBg })
+hl("QuickFixLine", { bg = c.line })
 hl("qfError", { fg = c.error })
 hl("Search", { fg = c.fg, bg = c.search })
 hl("SignColumn", { fg = c.fg, bg = c.bg })
@@ -79,8 +77,8 @@ hl("SpellBad", { undercurl = true })
 hl("SpellCap", { undercurl = true })
 hl("SpellLocal", { undercurl = true })
 hl("SpellRare", { undercurl = true })
-hl("StatusLine", { fg = c.fg, bg = c.inactiveBg })
-hl("StatusLineTerm", { fg = c.fg, bg = c.inactiveBg })
+hl("StatusLine", { fg = c.fg, bg = c.bg })
+hl("StatusLineTerm", { fg = c.fg, bg = c.bg })
 hl("StatusLineNC", { fg = c.comment })
 hl("StatusLineTermNC", { fg = c.comment })
 hl("Substitute", { fg = c.type, bg = c.visual })
@@ -96,7 +94,7 @@ hl("WarningMsg", { fg = c.warning })
 hl("Whitespace", { fg = c.line })
 hl("WildMenu", { fg = c.bg, bg = c.func })
 hl("WinSeparator", { fg = c.floatBorder })
-hl("WinBar", { fg = c.fg, bg = c.inactiveBg })
+hl("WinBar", { fg = c.fg, bg = c.line })
 hl("WinBarNC", { fg = c.comment })
 hl("Added", { fg = c.plus })
 hl("Changed", { fg = c.warning })
